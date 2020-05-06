@@ -65,7 +65,12 @@ public class Modelo implements Runnable {
 
     public void conectar() {
         try {
+            
+            
+            getBrazoCliente().run();
+            
             getBrazoCliente().conectar();
+            
         } catch (IOException ex) {
             System.out.println("ERROR: " + ex.getMessage());
         }
