@@ -11,8 +11,8 @@ package com.informatica.servidor.utils;
  */
 public final class Constantes {
     
-    public static final int ANCHO_MAXIMO_FRAME = 950;//Ancho máximo del frame en pixeles
-    public static final int ALTO_MAXIMO_FRAME = 450;//Ancho máximo del frame en pixeles
+    public static final int ANCHO_MAXIMO_FRAME = 350;//Ancho máximo del frame en pixeles
+    public static final int ALTO_MAXIMO_FRAME = 350;//Ancho máximo del frame en pixeles
     
     public static final int ANCHO_MAXIMO_CANVAS = 250;//Ancho máximo del canvas en pixeles
     public static final int ALTO_MAXIMO_CANVAS = 250;//Alto máximo del canvas en pixeles

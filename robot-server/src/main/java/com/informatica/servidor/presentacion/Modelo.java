@@ -66,13 +66,10 @@ public class Modelo implements Runnable {
                 
         run();
         
-        try {
-            System.out.println("Estableciendo conexión...");
+        System.out.println("Estableciendo conexión...");
             getBrazoServidor().conectar();
             System.out.println("Finalizando!");
-        } catch (IOException ex) {
-            System.out.println("ERROR: " + ex.getMessage());
-        }
+            
     }
 
     

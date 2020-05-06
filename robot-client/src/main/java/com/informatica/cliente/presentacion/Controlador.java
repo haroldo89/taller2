@@ -34,42 +34,42 @@ public class Controlador implements ChangeListener {
             System.out.println("Falange dig izq");
             //Mover la falange dig izq
             modelo.enviar(NombreSlider.FALANGE_DIG_IZQ.toString(), ventana.getSldrFalangeDigIzq().getValue());
-            modelo.girarFalDigIzq();
+            //modelo.girarFalDigIzq(ventana.getSldrFalangeDigIzq().getValue());
 
         } else if (e.getSource().equals(ventana.getSldFalangeDigDer())) {
             System.out.println("Falange dig der");
             //Mover la falange dig der
             modelo.enviar(NombreSlider.FALANGE_DIG_DER.toString(), ventana.getSldFalangeDigDer().getValue());
-            modelo.girarFalDigDer();
+            //modelo.girarFalDigDer(ventana.getSldFalangeDigDer().getValue());
 
         } else if (e.getSource().equals(ventana.getSldFalangeProxIzq())) {
             System.out.println("Falange prox izq");
             //Mover la falange prox izq
             modelo.enviar(NombreSlider.FALANGE_PROX_IZQ.toString(), ventana.getSldFalangeProxIzq().getValue());
-            modelo.girarFalProxIzq();
+            //modelo.girarFalProxIzq(ventana.getSldFalangeProxIzq().getValue());
 
         } else if (e.getSource().equals(ventana.getSldFalangeProxDer())) {
             System.out.println("Falange prox der");
             //Mover la falange prox der
             modelo.enviar(NombreSlider.FALANGE_PROX_DER.toString(), ventana.getSldFalangeProxDer().getValue());
-            modelo.girarFalProxDer();
+            //modelo.girarFalProxDer(ventana.getSldFalangeProxDer().getValue());
 
         } else if (e.getSource().equals(ventana.getSldMano())) {
             System.out.println("Mano");
             //Mover la mano
             modelo.enviar(NombreSlider.MANO.toString(), ventana.getSldMano().getValue());
-            modelo.girarMano();
+            //modelo.girarMano(ventana.getSldMano().getValue());
 
         } else if (e.getSource().equals(ventana.getSldAnteBrazo())) {
             System.out.println("Antebrazo");
             //Mover el antebrazo
             modelo.enviar(NombreSlider.ANTEBRAZO.toString(), ventana.getSldAnteBrazo().getValue());
-            modelo.girarAnteBrazo();
+            //modelo.girarAnteBrazo(ventana.getSldAnteBrazo().getValue());
         } else if (e.getSource().equals(ventana.getSldBrazo())) {
             System.out.println("Brazo");
             //Mover el antebrazo
             modelo.enviar(NombreSlider.BRAZO.toString(), ventana.getSldBrazo().getValue());
-            modelo.girarBrazo();
+            //modelo.girarBrazo(ventana.getSldBrazo().getValue());
         }
     }
 }
