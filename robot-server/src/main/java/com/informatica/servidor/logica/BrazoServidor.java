@@ -114,37 +114,37 @@ public class BrazoServidor {
         if (nombreSlider.equals(NombreSlider.FALANGE_DIG_IZQ.toString())) {
             System.out.println("Falange dig izq");
             //Mover la falange dig izq
-            modelo.girarFalDigIzq();
+            modelo.girarFalDigIzq(valorSlider);
 
         } else if (nombreSlider.equals(NombreSlider.FALANGE_DIG_DER.toString())) {
             System.out.println("Falange dig der");
             //Mover la falange dig der
-            modelo.girarFalDigDer();
+            modelo.girarFalDigDer(valorSlider);
 
         } else if (nombreSlider.equals(NombreSlider.FALANGE_PROX_IZQ.toString())) {
             System.out.println("Falange prox izq");
             //Mover la falange prox izq
-            modelo.girarFalProxIzq();
+            modelo.girarFalProxIzq(valorSlider);
 
         } else if (nombreSlider.equals(NombreSlider.FALANGE_PROX_DER.toString())) {
             System.out.println("Falange prox der");
             //Mover la falange prox der
-            modelo.girarFalProxDer();
+            modelo.girarFalProxDer(valorSlider);
 
         } else if (nombreSlider.equals(NombreSlider.MANO.toString())) {
             System.out.println("Mano");
             //Mover la mano
-            modelo.girarMano();
+            modelo.girarMano(valorSlider);
 
         } else if (nombreSlider.equals(NombreSlider.ANTEBRAZO.toString())) {
             System.out.println("Antebrazo");
             //Mover el antebrazo
-            modelo.girarAnteBrazo();
+            modelo.girarAnteBrazo(valorSlider);
 
         } else if (nombreSlider.equals(NombreSlider.BRAZO.toString())) {
             System.out.println("Brazo");
             //Mover el antebrazo
-            modelo.girarBrazo();
+            modelo.girarBrazo(valorSlider);
 
         }
         

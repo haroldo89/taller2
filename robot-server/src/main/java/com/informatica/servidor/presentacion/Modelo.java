@@ -89,7 +89,7 @@ public class Modelo implements Runnable {
     public void girarFalDigDer(int alphaGrados){
 //        int alphaGrados = getVentanaApp().getSldFalangeDigDer().getValue();
 //        System.out.println("Grados: " + alphaGrados);
-//        getBrazoCompleto().getDedoDer().getHuesoUnido().girarHueso(alphaGrados);
+        getBrazoCompleto().getDedoDer().getHuesoUnido().girarHueso(alphaGrados);
 
         dibujar();
     }
@@ -99,7 +99,7 @@ public class Modelo implements Runnable {
     public void girarFalProxIzq(int alphaGrados){
 //        int alphaGrados = getVentanaApp().getSldFalangeProxIzq().getValue();
 //        System.out.println("Grados: " + alphaGrados);
-//        getBrazoCompleto().getDedoIzq().girarHueso(alphaGrados);
+        getBrazoCompleto().getDedoIzq().girarHueso(alphaGrados);
 
         dibujar();
     }
@@ -108,7 +108,7 @@ public class Modelo implements Runnable {
     public void girarFalProxDer(int alphaGrados){
 //        int alphaGrados = getVentanaApp().getSldFalangeProxDer().getValue();
 //        System.out.println("Grados: " + alphaGrados);
-//        getBrazoCompleto().getDedoDer().girarHueso(alphaGrados);
+        getBrazoCompleto().getDedoDer().girarHueso(alphaGrados);
 
         dibujar();
     }
@@ -117,7 +117,7 @@ public class Modelo implements Runnable {
     public void girarMano(int alphaGrados){
 //        int alphaGrados = getVentanaApp().getSldMano().getValue();
 //        System.out.println("Grados: " + alphaGrados);
-//        getBrazoCompleto().getMano().girarHueso(alphaGrados);
+        getBrazoCompleto().getMano().girarHueso(alphaGrados);
 
         dibujar();
     }
@@ -126,7 +126,7 @@ public class Modelo implements Runnable {
     public void girarAnteBrazo(int alphaGrados){
 //        int alphaGrados = getVentanaApp().getSldAnteBrazo().getValue();
 //        System.out.println("Grados: " + alphaGrados);
-//        getBrazoCompleto().getAnteBrazo().girarHueso(alphaGrados);
+        getBrazoCompleto().getAnteBrazo().girarHueso(alphaGrados);
 
         dibujar();
     }
@@ -135,7 +135,7 @@ public class Modelo implements Runnable {
     public void girarBrazo(int alphaGrados){
 //        int alphaGrados = getVentanaApp().getSldBrazo().getValue();
 //        System.out.println("Grados: " + alphaGrados);
-//        getBrazoCompleto().getBrazo().girarHueso(alphaGrados);
+        getBrazoCompleto().getBrazo().girarHueso(alphaGrados);
 
         dibujar();
     }
