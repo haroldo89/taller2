@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.informatica.proyecto1.presentacion;
+package com.informatica.cliente.presentacion;
 
 import java.awt.Canvas;
 import javax.swing.JSlider;
@@ -78,7 +78,6 @@ public class Vista extends javax.swing.JFrame {
         lblBrazo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(650, 350));
 
         PanelControles.setBackground(new java.awt.Color(255, 255, 255));
         PanelControles.setPreferredSize(new java.awt.Dimension(200, 300));

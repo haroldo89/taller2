@@ -1,4 +1,4 @@
-package com.informatica.proyecto1.logica;
+package com.informatica.servidor.logica;
 
 import java.awt.BasicStroke;
 import java.awt.Color;

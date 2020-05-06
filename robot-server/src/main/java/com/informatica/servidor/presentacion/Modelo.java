@@ -1,11 +1,13 @@
-package com.informatica.proyecto1.presentacion;
+package com.informatica.servidor.presentacion;
 
 // import logica;
-import com.informatica.proyecto1.logica.BrazoRobot;
-import com.informatica.proyecto1.utils.Constantes;
+import com.informatica.servidor.logica.BrazoRobot;
+import com.informatica.servidor.logica.BrazoServidor;
+import com.informatica.servidor.utils.Constantes;
 import java.awt.Canvas;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 
 /**
@@ -17,12 +19,14 @@ public class Modelo implements Runnable {
     //VARIABLES
     private Vista ventanaApp;
     private BrazoRobot brazoCompleto;
+    private BrazoServidor brazoServidor;
     Boolean inicio = true;
     
     //CONSTRUCTOR
     public Modelo() {
         ventanaApp = new Vista(this);
         brazoCompleto = new BrazoRobot();
+        brazoServidor = new BrazoServidor(this);
     }
 
     
@@ -40,6 +44,14 @@ public class Modelo implements Runnable {
         }
         return brazoCompleto;
     }
+
+    public BrazoServidor getBrazoServidor() {
+        if(brazoServidor == null){
+            brazoServidor = new BrazoServidor(this);
+        }
+        return brazoServidor;
+    }
+    
     
     
     
@@ -50,74 +62,81 @@ public class Modelo implements Runnable {
      */
     public void iniciar() {
         getVentanaApp().setSize(Constantes.ANCHO_MAXIMO_FRAME, Constantes.ALTO_MAXIMO_FRAME);
-        getVentanaApp().setVisible(true); 
+        getVentanaApp().setVisible(true);        
+                
         run();
+        
+        try {
+            System.out.println("Estableciendo conexión...");
+            getBrazoServidor().conectar();
+            System.out.println("Finalizando!");
+        } catch (IOException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        }
     }
 
     
     //METODOS
-    public void girarFalDigIzq(){
-        int alphaGrados = getVentanaApp().getSldrFalangeDigIzq().getValue();
-        System.out.println("Grados: " + alphaGrados);
-        //getBrazo().girarFalDidIzq(alphaGrados);
+    public void girarFalDigIzq(int alphaGrados){
+//        int alphaGrados = getVentanaApp().getSldrFalangeDigIzq().getValue();
+//        System.out.println("Grados: " + alphaGrados);
         getBrazoCompleto().getDedoIzq().getHuesoUnido().girarHueso(alphaGrados);
-                //.getFalangeDigitalIzquierda().girarHueso(alphaGrados);
+
         dibujar();
     }
     
     
-    public void girarFalDigDer(){
-        int alphaGrados = getVentanaApp().getSldFalangeDigDer().getValue();
-        System.out.println("Grados: " + alphaGrados);
-        getBrazoCompleto().getDedoDer().getHuesoUnido().girarHueso(alphaGrados);
-                //.getFalangeDigitalDerecha().girarHueso(alphaGrados);
-                //girarFalDidDer(alphaGrados);
+    public void girarFalDigDer(int alphaGrados){
+//        int alphaGrados = getVentanaApp().getSldFalangeDigDer().getValue();
+//        System.out.println("Grados: " + alphaGrados);
+//        getBrazoCompleto().getDedoDer().getHuesoUnido().girarHueso(alphaGrados);
+
         dibujar();
     }
     
     
     
-    public void girarFalProxIzq(){
-        int alphaGrados = getVentanaApp().getSldFalangeProxIzq().getValue();
-        System.out.println("Grados: " + alphaGrados);
-        getBrazoCompleto().getDedoIzq().girarHueso(alphaGrados);
-                //girarFalProxIzq(alphaGrados);
+    public void girarFalProxIzq(int alphaGrados){
+//        int alphaGrados = getVentanaApp().getSldFalangeProxIzq().getValue();
+//        System.out.println("Grados: " + alphaGrados);
+//        getBrazoCompleto().getDedoIzq().girarHueso(alphaGrados);
+
         dibujar();
     }
     
     
-    public void girarFalProxDer(){
-        int alphaGrados = getVentanaApp().getSldFalangeProxDer().getValue();
-        System.out.println("Grados: " + alphaGrados);
-        getBrazoCompleto().getDedoDer().girarHueso(alphaGrados);
-                //girarFalProxDer(alphaGrados);
+    public void girarFalProxDer(int alphaGrados){
+//        int alphaGrados = getVentanaApp().getSldFalangeProxDer().getValue();
+//        System.out.println("Grados: " + alphaGrados);
+//        getBrazoCompleto().getDedoDer().girarHueso(alphaGrados);
+
         dibujar();
     }
     
     
-    public void girarMano(){
-        int alphaGrados = getVentanaApp().getSldMano().getValue();
-        System.out.println("Grados: " + alphaGrados);
-        getBrazoCompleto().getMano().girarHueso(alphaGrados);
-                //girarMano(alphaGrados);
+    public void girarMano(int alphaGrados){
+//        int alphaGrados = getVentanaApp().getSldMano().getValue();
+//        System.out.println("Grados: " + alphaGrados);
+//        getBrazoCompleto().getMano().girarHueso(alphaGrados);
+
         dibujar();
     }
     
     
-    public void girarAnteBrazo(){
-        int alphaGrados = getVentanaApp().getSldAnteBrazo().getValue();
-        System.out.println("Grados: " + alphaGrados);
-        getBrazoCompleto().getAnteBrazo().girarHueso(alphaGrados);
-                //girarAnteBrazo(alphaGrados);
+    public void girarAnteBrazo(int alphaGrados){
+//        int alphaGrados = getVentanaApp().getSldAnteBrazo().getValue();
+//        System.out.println("Grados: " + alphaGrados);
+//        getBrazoCompleto().getAnteBrazo().girarHueso(alphaGrados);
+
         dibujar();
     }
     
     
-    public void girarBrazo(){
-        int alphaGrados = getVentanaApp().getSldBrazo().getValue();
-        System.out.println("Grados: " + alphaGrados);
-        getBrazoCompleto().getBrazo().girarHueso(alphaGrados);
-                //girarBrazo(alphaGrados);
+    public void girarBrazo(int alphaGrados){
+//        int alphaGrados = getVentanaApp().getSldBrazo().getValue();
+//        System.out.println("Grados: " + alphaGrados);
+//        getBrazoCompleto().getBrazo().girarHueso(alphaGrados);
+
         dibujar();
     }
     

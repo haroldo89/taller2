@@ -1,6 +1,6 @@
-package com.informatica.proyecto1.logica;
+package com.informatica.servidor.logica;
 
-import com.informatica.proyecto1.utils.Constantes;
+import com.informatica.servidor.utils.Constantes;
 
 /**
  *

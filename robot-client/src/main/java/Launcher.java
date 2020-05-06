@@ -1,16 +1,14 @@
 
+import com.informatica.cliente.presentacion.Modelo;
 
-import com.informatica.servidor.presentacion.Modelo;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
- * @author harol
+ * @author Vamaya
  */
 public class Launcher {
-    private Modelo modelo;
-
+    private final Modelo modelo;
+    
     /**
      * Constructor del lanzador, para inicar la aplicación
      */
@@ -26,5 +24,4 @@ public class Launcher {
     public static void main(String[] args) {
         new Launcher();
     }
-    
 }
