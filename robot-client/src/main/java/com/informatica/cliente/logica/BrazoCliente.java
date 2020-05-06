@@ -1,6 +1,6 @@
-
 package com.informatica.cliente.logica;
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
@@ -10,7 +10,10 @@ import lombok.Setter;
  *
  * @author Vamaya
  */
-public class BrazoCliente{
+public class BrazoCliente {
+
+    public static final int MAX_BYTES = 200; //Tamaño máximo del mensaje
+
     //VARIABLES
     /**
      * Variables para la conexión con el servidor
@@ -23,7 +26,8 @@ public class BrazoCliente{
      * Variables para el envío de datos al servidor
      */
     private DataOutputStream datosSalida;
-    
+    private DataInputStream datosEntrada;
+
     /**
      * Variables para guardfar valores del slider modificado
      */
@@ -31,20 +35,19 @@ public class BrazoCliente{
     private String nombreSlider;
     @Setter
     private int valorSlider;
-    
+
     //CONSTRUCTOR
     /**
      * Default constructor
      */
     public BrazoCliente() {
-        
+
     }
 
     //MÉTODOS
-    
-    
     /**
      * Método para conectarse con el servidor y enviar datos
+     *
      * @throws java.io.IOException
      */
     public void conectar() throws IOException {
@@ -68,6 +71,25 @@ public class BrazoCliente{
 
     }
 
-    
-    
+    public void run() {
+        // Para almacenar lo que llegue del servidor
+        byte buffer[];
+        while (true) {
+            try {
+                // leo lo que envía el server
+                System.out.println("Esperando mensaje...");
+                buffer = new byte[MAX_BYTES];
+                datosEntrada.read(buffer); // Se queda acá, hasta que el servidor envíe algo
+                System.out.print("El servidor envía: ");
+                // decodificar el mensaje
+                String mensaje = new String(buffer).trim();
+                
+                System.out.println(mensaje);
+                
+            } catch (IOException ex) {
+                System.out.println("error en la comunicación");
+            }
+        }
+    }
+
 }

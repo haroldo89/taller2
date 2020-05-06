@@ -63,6 +63,8 @@ public class Vista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PanelCanvas = new javax.swing.JPanel();
+        lienzo = new java.awt.Canvas();
         PanelControles = new javax.swing.JPanel();
         sldFalangeDigIzq = new javax.swing.JSlider();
         sldFalangeDigDer = new javax.swing.JSlider();
@@ -78,6 +80,32 @@ public class Vista extends javax.swing.JFrame {
         lblBrazo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(650, 350));
+
+        PanelCanvas.setBackground(new java.awt.Color(255, 255, 255));
+        PanelCanvas.setPreferredSize(new java.awt.Dimension(300, 300));
+
+        lienzo.setBackground(new java.awt.Color(204, 204, 204));
+        lienzo.setPreferredSize(new java.awt.Dimension(250, 250));
+
+        javax.swing.GroupLayout PanelCanvasLayout = new javax.swing.GroupLayout(PanelCanvas);
+        PanelCanvas.setLayout(PanelCanvasLayout);
+        PanelCanvasLayout.setHorizontalGroup(
+            PanelCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCanvasLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(lienzo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        PanelCanvasLayout.setVerticalGroup(
+            PanelCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCanvasLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lienzo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
+        );
+
+        lienzo.getAccessibleContext().setAccessibleName("");
 
         PanelControles.setBackground(new java.awt.Color(255, 255, 255));
         PanelControles.setPreferredSize(new java.awt.Dimension(200, 300));
@@ -220,13 +248,13 @@ public class Vista extends javax.swing.JFrame {
                             .addComponent(lblAnteBrazo))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(PanelControlesLayout.createSequentialGroup()
-                        .addGroup(PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(sldFalangeDigIzq, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                        .addGroup(PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sldFalangeDigIzq, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
                             .addComponent(sldFalangeProxIzq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addGroup(PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sldFalangeDigDer, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
-                            .addComponent(sldFalangeProxDer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(sldFalangeProxDer, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
+                            .addComponent(sldFalangeDigDer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         PanelControlesLayout.setVerticalGroup(
@@ -267,15 +295,19 @@ public class Vista extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PanelControles, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(PanelCanvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(PanelControles, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PanelControles, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(PanelControles, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PanelCanvas, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -284,7 +316,7 @@ public class Vista extends javax.swing.JFrame {
 
     //GETTERS DE LOS COMPONENTES DEL FRAME
     public Canvas getLienzo() {
-        return new Canvas();
+        return lienzo;
     }
 
     public JSlider getSldrFalangeDigIzq() {
@@ -319,12 +351,14 @@ public class Vista extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PanelCanvas;
     private javax.swing.JPanel PanelControles;
     private javax.swing.JLabel lblAnteBrazo;
     private javax.swing.JLabel lblBrazo;
     private javax.swing.JLabel lblFalangesDig;
     private javax.swing.JLabel lblFalangesProx;
     private javax.swing.JLabel lblMano;
+    private java.awt.Canvas lienzo;
     private javax.swing.JSlider sldAnteBrazo;
     private javax.swing.JSlider sldBrazo;
     private javax.swing.JSlider sldFalangeDigDer;

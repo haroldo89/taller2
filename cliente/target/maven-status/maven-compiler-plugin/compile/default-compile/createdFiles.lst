@@ -1,0 +1,15 @@
+com\informatica\proyecto1\logica\BrazoRobotFabrica.class
+com\informatica\proyecto1\utils\Constantes.class
+com\informatica\proyecto1\logica\HuesoConHueso.class
+com\informatica\proyecto1\presentacion\Vista.class
+com\informatica\proyecto1\logica\Dedo.class
+com\informatica\proyecto1\logica\Hueso.class
+com\informatica\proyecto1\logica\Articulacion.class
+com\informatica\proyecto1\logica\BrazoRobot.class
+com\informatica\proyecto1\logica\Base.class
+com\informatica\proyecto1\presentacion\Controlador.class
+com\informatica\proyecto1\logica\Mano.class
+com\informatica\proyecto1\presentacion\Modelo.class
+com\informatica\proyecto1\Launcher.class
+com\informatica\proyecto1\logica\AnteBrazo.class
+com\informatica\proyecto1\logica\Brazo.class
