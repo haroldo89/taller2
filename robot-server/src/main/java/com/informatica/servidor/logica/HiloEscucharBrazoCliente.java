@@ -74,19 +74,20 @@ public class HiloEscucharBrazoCliente extends Thread {
 
     @Override
     public void run() {
-        try {
-            System.out.println(raizLog + "Leyendo datos de entrada...");
-            //capturar los flujos
-            datosEntrada = new DataInputStream(cliente.getInputStream());
-            //os=new PrintWriter(s.getOutputStream());
-
-        } catch (IOException e) {
-            System.out.println(raizLog +"IO error in server thread");
-        }
+//        try {
+//            
+//            //capturar los flujos
+//            
+//            //os=new PrintWriter(s.getOutputStream());
+//
+//        } catch (IOException e) {
+//            System.out.println(raizLog +"IO error in server thread");
+//        }
 
         try {
             while(true){
-                
+            System.out.println(raizLog + "Leyendo datos de entrada...");
+            datosEntrada = new DataInputStream(cliente.getInputStream());
             
             //Se leen los datos de entrada del cleinte
             String mensajeCliente = "";
@@ -184,14 +185,14 @@ public class HiloEscucharBrazoCliente extends Thread {
         List<HiloEscucharBrazoCliente> listaHilos = servidor.getListaHilosClientes();
         
         for (HiloEscucharBrazoCliente unHilo : listaHilos) {
-            unHilo.enviarMensaje(unHilo);
+            unHilo.enviarMensaje(this.nombreSlider, this.valorSlider);
         }
     }
     
     
     
     
-    public void enviarMensaje(HiloEscucharBrazoCliente unHilo) throws IOException{
+    public void enviarMensaje(String nombreSliderEnviado, Integer ValorSliderEnviado) throws IOException{
         
         try {
             Thread.sleep(200);
@@ -200,13 +201,13 @@ public class HiloEscucharBrazoCliente extends Thread {
         }
         
         //Establecer el protocolo de mensaje a enviar
-        String mensaje = nombreSlider + "," + valorSlider+",";
+        String mensaje = nombreSliderEnviado + "," + ValorSliderEnviado+",";
 
         //Capturo el flujo de salida y lo asocio al dato de salida
-        datosSalida = new DataOutputStream(unHilo.getCliente().getOutputStream());
+        datosSalida = new DataOutputStream(this.cliente.getOutputStream());
 
         //Opero con los mensajes
-        System.out.println("Enviando el mensaje: [" + mensaje + "]");
+        System.out.println(raizLog + "Enviando el mensaje: [" + mensaje + "]");
         datosSalida.write(mensaje.getBytes()); // ESTE ES EL PROTOCOLO
 //        try {
 //            Thread.sleep(100);
@@ -220,39 +221,39 @@ public class HiloEscucharBrazoCliente extends Thread {
     public void moverBrazo(String nombreSlider, Integer valorSlider) {
 
         //Falange dig izq
-        System.out.println("Entro a cambio de estado..");
+        System.out.println(raizLog + "Entro a cambio de estado..");
         if (nombreSlider.equals(NombreSlider.FALANGE_DIG_IZQ.toString())) {
-            System.out.println("Falange dig izq");
+            System.out.println(raizLog + "Falange dig izq");
             //Mover la falange dig izq
             modelo.girarFalDigIzq(valorSlider);
 
         } else if (nombreSlider.equals(NombreSlider.FALANGE_DIG_DER.toString())) {
-            System.out.println("Falange dig der");
+            System.out.println(raizLog + "Falange dig der");
             //Mover la falange dig der
             modelo.girarFalDigDer(valorSlider);
 
         } else if (nombreSlider.equals(NombreSlider.FALANGE_PROX_IZQ.toString())) {
-            System.out.println("Falange prox izq");
+            System.out.println(raizLog + "Falange prox izq");
             //Mover la falange prox izq
             modelo.girarFalProxIzq(valorSlider);
 
         } else if (nombreSlider.equals(NombreSlider.FALANGE_PROX_DER.toString())) {
-            System.out.println("Falange prox der");
+            System.out.println(raizLog + "Falange prox der");
             //Mover la falange prox der
             modelo.girarFalProxDer(valorSlider);
 
         } else if (nombreSlider.equals(NombreSlider.MANO.toString())) {
-            System.out.println("Mano");
+            System.out.println(raizLog + "Mano");
             //Mover la mano
             modelo.girarMano(valorSlider);
 
         } else if (nombreSlider.equals(NombreSlider.ANTEBRAZO.toString())) {
-            System.out.println("Antebrazo");
+            System.out.println(raizLog + "Antebrazo");
             //Mover el antebrazo
             modelo.girarAnteBrazo(valorSlider);
 
         } else if (nombreSlider.equals(NombreSlider.BRAZO.toString())) {
-            System.out.println("Brazo");
+            System.out.println(raizLog + "Brazo");
             //Mover el antebrazo
             modelo.girarBrazo(valorSlider);
 
