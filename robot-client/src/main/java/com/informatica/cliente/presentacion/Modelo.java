@@ -91,6 +91,8 @@ public class Modelo implements Runnable {
         System.out.println("Grados: " + alphaGrados);
         //getBrazo().girarFalDidIzq(alphaGrados);
         getBrazoCompleto().getDedoIzq().getHuesoUnido().girarHueso(alphaGrados);
+        
+        getVentanaApp().getSldrFalangeDigIzq().setValue(alphaGrados);
         //.getFalangeDigitalIzquierda().girarHueso(alphaGrados);
         dibujar();
     }
@@ -101,6 +103,8 @@ public class Modelo implements Runnable {
         getBrazoCompleto().getDedoDer().getHuesoUnido().girarHueso(alphaGrados);
         //.getFalangeDigitalDerecha().girarHueso(alphaGrados);
         //girarFalDidDer(alphaGrados);
+        
+        getVentanaApp().getSldFalangeDigDer().setValue(alphaGrados);
         dibujar();
     }
 
@@ -109,6 +113,8 @@ public class Modelo implements Runnable {
         System.out.println("Grados: " + alphaGrados);
         getBrazoCompleto().getDedoIzq().girarHueso(alphaGrados);
         //girarFalProxIzq(alphaGrados);
+        
+        getVentanaApp().getSldFalangeProxIzq().setValue(alphaGrados);
         dibujar();
     }
 
@@ -117,6 +123,8 @@ public class Modelo implements Runnable {
         System.out.println("Grados: " + alphaGrados);
         getBrazoCompleto().getDedoDer().girarHueso(alphaGrados);
         //girarFalProxDer(alphaGrados);
+        
+        getVentanaApp().getSldFalangeProxDer().setValue(alphaGrados);
         dibujar();
     }
 
@@ -125,6 +133,8 @@ public class Modelo implements Runnable {
         System.out.println("Grados: " + alphaGrados);
         getBrazoCompleto().getMano().girarHueso(alphaGrados);
         //girarMano(alphaGrados);
+        
+        getVentanaApp().getSldMano().setValue(alphaGrados);
         dibujar();
     }
 
@@ -133,6 +143,8 @@ public class Modelo implements Runnable {
         System.out.println("Grados: " + alphaGrados);
         getBrazoCompleto().getAnteBrazo().girarHueso(alphaGrados);
         //girarAnteBrazo(alphaGrados);
+        
+        getVentanaApp().getSldAnteBrazo().setValue(alphaGrados);
         dibujar();
     }
 
@@ -141,6 +153,8 @@ public class Modelo implements Runnable {
         System.out.println("Grados: " + alphaGrados);
         getBrazoCompleto().getBrazo().girarHueso(alphaGrados);
         //girarBrazo(alphaGrados);
+        
+        getVentanaApp().getSldBrazo().setValue(alphaGrados);
         dibujar();        
     }
 
