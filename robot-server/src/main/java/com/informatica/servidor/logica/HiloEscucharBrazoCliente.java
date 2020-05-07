@@ -185,7 +185,11 @@ public class HiloEscucharBrazoCliente extends Thread {
         List<HiloEscucharBrazoCliente> listaHilos = servidor.getListaHilosClientes();
         
         for (HiloEscucharBrazoCliente unHilo : listaHilos) {
-            unHilo.enviarMensaje(this.nombreSlider, this.valorSlider);
+            if(!unHilo.getName().equals(this.getName())){
+                //Enviar mensaje a los demás
+                unHilo.enviarMensaje(this.nombreSlider, this.valorSlider);
+            }
+            
         }
     }
     

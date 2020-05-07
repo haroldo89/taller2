@@ -7,10 +7,8 @@ package com.informatica.cliente.logica;
 
 import com.informatica.cliente.presentacion.Modelo;
 import com.informatica.cliente.utils.NombreSlider;
-import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.Socket;
 
 /**
@@ -159,37 +157,37 @@ public class HiloEscuchaBrazoServidor extends Thread {
         if (nombreSlider.equals(NombreSlider.FALANGE_DIG_IZQ.toString())) {
             System.out.println("Falange dig izq");
             //Mover la falange dig izq
-            modelo.girarFalDigIzq(valorSlider);
+            modelo.girarFalDigIzq(valorSlider, true);
 
         } else if (nombreSlider.equals(NombreSlider.FALANGE_DIG_DER.toString())) {
             System.out.println("Falange dig der");
             //Mover la falange dig der
-            modelo.girarFalDigDer(valorSlider);
+            modelo.girarFalDigDer(valorSlider, true);
 
         } else if (nombreSlider.equals(NombreSlider.FALANGE_PROX_IZQ.toString())) {
             System.out.println("Falange prox izq");
             //Mover la falange prox izq
-            modelo.girarFalProxIzq(valorSlider);
+            modelo.girarFalProxIzq(valorSlider, true);
 
         } else if (nombreSlider.equals(NombreSlider.FALANGE_PROX_DER.toString())) {
             System.out.println("Falange prox der");
             //Mover la falange prox der
-            modelo.girarFalProxDer(valorSlider);
+            modelo.girarFalProxDer(valorSlider, true);
 
         } else if (nombreSlider.equals(NombreSlider.MANO.toString())) {
             System.out.println("Mano");
             //Mover la mano
-            modelo.girarMano(valorSlider);
+            modelo.girarMano(valorSlider, true);
 
         } else if (nombreSlider.equals(NombreSlider.ANTEBRAZO.toString())) {
             System.out.println("Antebrazo");
             //Mover el antebrazo
-            modelo.girarAnteBrazo(valorSlider);
+            modelo.girarAnteBrazo(valorSlider, true);
 
         } else if (nombreSlider.equals(NombreSlider.BRAZO.toString())) {
             System.out.println("Brazo");
             //Mover el antebrazo
-            modelo.girarBrazo(valorSlider);
+            modelo.girarBrazo(valorSlider, true);
 
         }
 

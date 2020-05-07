@@ -44,13 +44,21 @@ public class Vista extends javax.swing.JFrame {
     
     
     private void asignarEventos() {
-        sldFalangeDigIzq.addChangeListener(getControl());
-        sldFalangeDigDer.addChangeListener(getControl());
-        sldFalangeProxIzq.addChangeListener(getControl());
-        sldFalangeProxDer.addChangeListener(getControl());
-        sldMano.addChangeListener(getControl());
-        sldAnteBrazo.addChangeListener(getControl());
-        sldBrazo.addChangeListener(getControl());
+//        sldFalangeDigIzq.addChangeListener(getControl());
+//        sldFalangeDigDer.addChangeListener(getControl());
+//        sldFalangeProxIzq.addChangeListener(getControl());
+//        sldFalangeProxDer.addChangeListener(getControl());
+//        sldMano.addChangeListener(getControl());
+//        sldAnteBrazo.addChangeListener(getControl());
+//        sldBrazo.addChangeListener(getControl());
+        
+        sldFalangeDigIzq.addMouseListener(getControl());
+        sldFalangeDigDer.addMouseListener(getControl());
+        sldFalangeProxIzq.addMouseListener(getControl());
+        sldFalangeProxDer.addMouseListener(getControl());
+        sldMano.addMouseListener(getControl());
+        sldAnteBrazo.addMouseListener(getControl());
+        sldBrazo.addMouseListener(getControl());
     }
     
     
