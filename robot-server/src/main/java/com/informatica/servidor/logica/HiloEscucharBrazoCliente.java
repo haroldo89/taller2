@@ -145,6 +145,7 @@ public class HiloEscucharBrazoCliente extends Thread {
                     cliente.close();
                     System.out.println(raizLog +"Socket Closed");
                 }
+                
 
             } catch (IOException ie) {
                 System.out.println(raizLog +"Socket Close Error");
@@ -185,7 +186,7 @@ public class HiloEscucharBrazoCliente extends Thread {
         List<HiloEscucharBrazoCliente> listaHilos = servidor.getListaHilosClientes();
         
         for (HiloEscucharBrazoCliente unHilo : listaHilos) {
-            if(!unHilo.getName().equals(this.getName())){
+            if(!unHilo.getName().equals(this.getName()) && unHilo.isAlive()){
                 //Enviar mensaje a los demás
                 unHilo.enviarMensaje(this.nombreSlider, this.valorSlider);
             }
