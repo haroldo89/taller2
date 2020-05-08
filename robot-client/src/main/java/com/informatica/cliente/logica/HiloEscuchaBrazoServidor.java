@@ -52,7 +52,7 @@ public class HiloEscuchaBrazoServidor extends Thread {
     public void run() {
         try {
             //Ciclo de lectura de datos enviados por el cliente
-            while (true) {
+            while (isLecturaActiva()) {
                 datosEntrada = new DataInputStream(servidor.getInputStream());//Se crea conexión de lectura de datos con el SERVIDOR
                 System.out.println(raizLog + "Conexión de lectura de datos iniciada con el SERVIDOR .....");
                 //Se leen los datos de entrada del cleinte

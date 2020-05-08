@@ -14,7 +14,7 @@ import java.awt.Canvas;
 public class Vista extends javax.swing.JFrame {
     
     //VARIABLES
-    private Controlador control;
+    //private Controlador control;
     private Modelo modelo;
 
     
@@ -23,12 +23,12 @@ public class Vista extends javax.swing.JFrame {
         return modelo;
     }
     
-    public Controlador getControl() {
-        if(control == null){
-            control = new Controlador(this);
-        }
-        return control;
-    }
+//    public Controlador getControl() {
+//        if(control == null){
+//            control = new Controlador(this);
+//        }
+//        return control;
+//    }
     
     /**
      * Constructor de la vista 
